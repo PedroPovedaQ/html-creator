@@ -27,10 +27,10 @@ const parseContent = (content, createElementMethod) => {
  * @param {Object} applyAttributes - The HTML attributes to be added to the tag
  * @param {String/Array} content - The content of the tag. Can be either a string or an array of elements
  */
-const create = ({ type, attributes, content }) => {
-	if (type) {
+const create = ({ type, attributes, content, customTagContent }) => {
+		if (type) {
 		return (content) ?
-			`<${type}${applyAttributes(attributes)}>${parseContent(content, create)}</${type}>` : `<${type}${applyAttributes(attributes)} />`;
+			`<${type}${applyAttributes(attributes)}${customTagContent}>${parseContent(content, create)}</${type}>` : `<${type}${applyAttributes(attributes)}${customTagContent}></${type}>`;
 	}
 	return content;
 };
