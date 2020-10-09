@@ -3,6 +3,5 @@ node_modules
 lib
 coverage/
 test-report/
-dist/
 index.html
 npm-debug.log
